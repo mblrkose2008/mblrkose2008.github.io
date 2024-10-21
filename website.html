@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişmiş Kişiselleştirilmiş AI Sohbet Asistanı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">AI Asistanı</div>
+        <button class="settings-button" onclick="openSettings()">Ayarlar</button>
+    </header>
+
+    <div class="container">
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ai-message">Merhaba! Size bugün nasıl yardımcı olabilirim?</div>
+            </div>
+            <div class="input-container">
+                <input type="text" class="input-field" id="userInput" placeholder="Mesajınızı yazın...">
+                <button class="send-button" onclick="sendMessage()">Gönder</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsModal" class="settings-modal">
+        <div class="settings-content">
+            <span class="close" onclick="closeSettings()">&times;</span>
+            <h2>Ayarlar</h2>
+            <div class="setting-item">
+                <label for="theme">Tema:</label>
+                <select id="theme" onchange="applyTheme()">
+                    <option value="light">Açık</option>
+                    <option value="dark">Koyu</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="fontSize">Yazı Boyutu:</label>
+                <select id="fontSize" onchange="applyFontSize()">
+                    <option value="small">Küçük</option>
+                    <option value="medium" selected>Orta</option>
+                    <option value="large">Büyük</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="accentColor">Vurgu Rengi:</label>
+                <input type="color" id="accentColor" value="#4285f4" onchange="applyAccentColor()">
+            </div>
+            <div class="setting-item">
+                <label for="aiPersonality">AI Kişiliği:</label>
+                <select id="aiPersonality">
+                    <option value="formal">Resmi</option>
+                    <option value="friendly">Arkadaşça</option>
+                    <option value="professional">Profesyonel</option>
+                    <option value="humorous">Esprili</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="responseLength">Cevap Uzunluğu:</label>
+                <input type="range" id="responseLength" min="1" max="5" value="3" onchange="updateResponseLengthLabel()">
+                <span id="responseLengthLabel">Orta</span>
+            </div>
+            <div class="setting-item">
+                <label for="language">Dil:</label>
+                <select id="language">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="customInstructions">Özel Yönergeler:</label>
+                <textarea id="customInstructions" placeholder="AI'ya özel yönergelerinizi buraya yazın..."></textarea>
+            </div>
+            <button class="send-button" onclick="saveSettings()">Ayarları Kaydet</button>
+        </div>
+    </div>
+
+    <div class="footer">Made by Mustafa Köse</div>
+
+
+   <script src="index.js"></script>
+</body>
+</html>
